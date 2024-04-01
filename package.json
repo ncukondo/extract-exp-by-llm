@@ -2,8 +2,12 @@
   "name": "extract-exp-by-llm",
   "module": "api/index.ts",
   "type": "module",
+  "scripts": {
+    "start": "vercel dev"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "vercel": "^33.6.2"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
