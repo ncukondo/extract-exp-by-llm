@@ -4,7 +4,7 @@ export default function (req: VercelRequest, res: VercelResponse) {
   if (req.method === 'POST') {
     // POSTリクエストを処理します
     const name = req.body;
-    res.send(`Post:Hello ${name}!`);
+    res.status(200).json({Hello: name});
   } else {
     // その他のHTTPメソッドを処理します
     const { name = "World" } = req.query;
