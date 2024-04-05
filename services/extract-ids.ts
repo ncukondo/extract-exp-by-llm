@@ -1,13 +1,13 @@
-import { loadAsJson } from "../lib/file-utils";
-import { chatCompletion, type CompletionResponse, type Message } from "../lib/chat-completion";
-import { loadFile } from "../lib/file-utils";
+import { loadAsJson } from "../lib/file-utils.js";
+import { chatCompletion, type CompletionResponse, type Message } from "../lib/chat-completion.js";
+import { loadFile } from "../lib/file-utils.js";
 
-const makeExtractIdPrompt = (content: string) => {
-  const prompt = loadFile("templates/extract_id.txt")
+const makeExtractIdPrompt = async (content: string) => {
+  const prompt = await loadFile("templates/extract_id.txt")
   return `${prompt}${content}`
 }
 const extractIdsApi = async (content: string): Promise<CompletionResponse | undefined> => {
-  const text = makeExtractIdPrompt(content);
+  const text = await makeExtractIdPrompt(content);
 
   const messages = [
     {
@@ -26,10 +26,10 @@ type FormattedIds ={
   examinations: string[];
 }
 
-const loadFormatTemplate = () => loadAsJson<FormattedIds>("../templates/ids.json");
+const loadFormatTemplate = async () => await loadAsJson<FormattedIds>("templates/ids.json");
 
-const convertToFormattedIds = (ids: string[]): FormattedIds => {
-  const formatTemplate = loadFormatTemplate();
+const convertToFormattedIds = async (ids: string[]): Promise<FormattedIds> => {
+  const formatTemplate = await loadFormatTemplate();
   return {
     procedures: formatTemplate.procedures.filter((id) => ids.includes(id)),
     diseases: formatTemplate.diseases.filter((id) => ids.includes(id)),
@@ -38,8 +38,8 @@ const convertToFormattedIds = (ids: string[]): FormattedIds => {
   }
 }
 
-const convertToUrl = (baseUrl:string,ids: string[]): string => {
-  const formattedIds = convertToFormattedIds(ids);
+const convertToUrl = async (baseUrl:string,ids: string[]): Promise<string> => {
+  const formattedIds = await convertToFormattedIds(ids);
   const params = Object.entries(formattedIds).flatMap(([key, idList]) => {
     return idList.map((id,i) => [`data.${key}.${i}`,`${id}`]);
   })
@@ -67,7 +67,7 @@ const extractIds = async (baseUrl:string, content: string): Promise<ExtractIdsSu
   }
   const text = res.choices[0].message.content;
   const ids = text.split(",").map((id) => id.trim());
-  const url = convertToUrl(baseUrl,ids);
+  const url = await convertToUrl(baseUrl,ids);
   return {
     status: "success",
     codes: ids,

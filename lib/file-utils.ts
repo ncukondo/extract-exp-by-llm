@@ -1,16 +1,17 @@
-import * as fs from 'fs-extra';
-import { ensureWithoutBom,parseCSV,toCsv } from './csv';
+import * as fse from 'fs-extra';
+import * as fs from "node:fs/promises";
+import { ensureWithoutBom,parseCSV,toCsv } from './csv.js';
 
-const loadFile = (path: string) => {
-  return fs.readFileSync(path).toString();
+const loadFile = async (path: string) => {
+  return (await fs.readFile(path)).toString();
 }
 
-const loadAsJson = <T>(path: string) => {
-  return JSON.parse(loadFile(path)) as T;
+const loadAsJson = async <T>(path: string) => {
+  return JSON.parse(await loadFile(path)) as T;
 }
 
-const loadCsv = (path: string) => {
-  const text = loadFile(path);
+const loadCsv = async (path: string) => {
+  const text = await loadFile(path);
   const result = parseCSV(ensureWithoutBom(text));
   if(result.ok){
     return result.value as string[][];
@@ -19,8 +20,8 @@ const loadCsv = (path: string) => {
 }
 
 
-const loadCsvAsDictList = (path: string) => {
-  const table = loadCsv(path);
+const loadCsvAsDictList = async (path: string) => {
+  const table = await loadCsv(path);
   const [header, ...rows] = table;
   return rows.map(row => {
     const dict: { [key: string]: string } = {};
@@ -31,15 +32,4 @@ const loadCsvAsDictList = (path: string) => {
   });
 }
 
-const saveFile = (text:string,path:string) => {
-  const dir = path.split("/").slice(0,-1).join("/");
-  fs.ensureDirSync(dir);
-  fs.writeFileSync(path,text);
-}
-
-const saveJson = <T>(data: T, path: string) => {
-  saveFile(JSON.stringify(data, null, 2), path);
-}
-
-
-export {loadAsJson,loadFile,loadCsv,loadCsvAsDictList,saveFile,saveJson}
+export {loadAsJson,loadFile,loadCsv,loadCsvAsDictList}

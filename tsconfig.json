@@ -8,10 +8,13 @@
     "allowJs": true,
 
     "moduleResolution": "node",
+    "noEmit": true,
 
     "skipLibCheck": true,
     "strict": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true
+
   }
+
 }

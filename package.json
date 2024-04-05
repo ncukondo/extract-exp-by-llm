@@ -3,11 +3,12 @@
   "module": "api/index.ts",
   "type": "module",
   "scripts": {
-    "start": "vercel dev"
+    "start": "vercel dev",
+    "build-vercel": "vercel build"
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "vercel": "^33.6.2"
+    "vercel": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

@@ -1,5 +1,5 @@
-import { type Input,type Output,parseInput,outputSchema } from "../lib/types";
-import { extractIds } from "../services/extract-ids";
+import { type Output,parseInput } from "../lib/types.js";
+import { extractIds } from "./extract-ids.js";
 
 const baseUrl = "https://flexible-form.vercel.app/v/pEtOtu6xRWOEpjY3V5Iy9Q";
 
