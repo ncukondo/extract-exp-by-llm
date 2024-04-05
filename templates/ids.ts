@@ -121,7 +121,7 @@ export const idsTemplate = {
     "Jkxirxk",
     "Jkxirw8"
   ],
-  "procedures":[
+  procedures:[
     "JlAKx_k",
     "Jub5cSY",
     "Jub5cSc",
