@@ -1,13 +1,14 @@
 import { loadAsJson } from "../lib/file-utils.js";
 import { chatCompletion, type CompletionResponse, type Message } from "../lib/chat-completion.js";
-import { loadFile } from "../lib/file-utils.js";
+import { promptTemplate } from "../templates/extract_id.js";
+import { idsTemplate } from "../templates/ids.js";
 
-const makeExtractIdPrompt = async (content: string) => {
-  const prompt = await loadFile("templates/extract_id.txt")
+const makeExtractIdPrompt = (content: string) => {
+  const prompt = promptTemplate;
   return `${prompt}${content}`
 }
 const extractIdsApi = async (content: string): Promise<CompletionResponse | undefined> => {
-  const text = await makeExtractIdPrompt(content);
+  const text = makeExtractIdPrompt(content);
 
   const messages = [
     {
@@ -26,10 +27,9 @@ type FormattedIds ={
   examinations: string[];
 }
 
-const loadFormatTemplate = async () => await loadAsJson<FormattedIds>("templates/ids.json");
 
-const convertToFormattedIds = async (ids: string[]): Promise<FormattedIds> => {
-  const formatTemplate = await loadFormatTemplate();
+const convertToFormattedIds = (ids: string[]): FormattedIds => {
+  const formatTemplate = idsTemplate;
   return {
     procedures: formatTemplate.procedures.filter((id) => ids.includes(id)),
     diseases: formatTemplate.diseases.filter((id) => ids.includes(id)),

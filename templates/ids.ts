@@ -1,5 +1,5 @@
-{
-  "diseases": [
+export const idsTemplate = {
+  diseases: [
     "JlvnmL0",
     "JlvnmL8",
     "JlvnmMA",
@@ -55,7 +55,7 @@
     "JlvnmeA",
     "JlvnmeQ"
   ],
-  "symptoms":[
+  symptoms:[
     "JlAK6lk",
     "JlAK6lo",
     "JlAK6ls",
@@ -94,7 +94,7 @@
     "JlAK6nw",
     "JlAK6n0"    
   ],
-  "examinations":[
+  examinations:[
     "JkxirwY",
     "Jli6WW4",
     "Jli6WW8",
