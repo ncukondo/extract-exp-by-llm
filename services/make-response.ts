@@ -15,7 +15,7 @@ const handler = async (input: unknown): Promise<Output> => {
   const responses = await Promise.all(data.map(async ({id,content}) => {
     const res = await extractIds(baseUrl,content);
     if(res.status === "success") {
-      const url = `${res.url}&id=${id}`;
+      const url = `${res.url}&item.id=${id}`;
       return {id, ...res, url};
     }
     return {id,...res};
@@ -41,7 +41,7 @@ const dummyHandler = async (input: unknown): Promise<Output> => {
       id,
       status: "success" as const,
       codes: ["dummy"],
-      url: `https://dummy.com?id=${id}`,
+      url: `https://dummy.com?item.id=${id}`,
     };
   }
   ));
