@@ -42,6 +42,11 @@ const dummyHandler = async (input: unknown): Promise<Output> => {
       status: "success" as const,
       codes: ["dummy"],
       url: `https://dummy.com?data.id=${id}`,
+      tokens: {
+        total: 0,
+        prompt: 0,
+        completion: 0,
+      }
     };
   }
   ));

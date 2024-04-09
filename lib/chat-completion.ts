@@ -29,25 +29,32 @@ type Model =
   | "gpt-3.5-turbo-0125" 
   | "gpt-3.5-turbo-0125-turbo";
 
-export const chatCompletion = async (
-  messages: ReadonlyArray<Message>,
-  model: Model = "gpt-3.5-turbo-0125"
-): Promise<CompletionResponse | undefined> => {
-  const body = JSON.stringify({
-    messages,
-    model,
-  });
-
-  const res = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.AI_API_KEY}`,
-    },
-    body,
-  });
-  const data = await res.json() as CompletionResponse | undefined;
-  return data;
-};
-
+  type chatCompletionOptions = {
+    response_format?:{type: "json_object"|"text"};
+    temperature?: number;
+  }
+  
+  export const chatCompletion = async (
+    messages: ReadonlyArray<Message>,
+    model: Model = "gpt-3.5-turbo-0125",
+    options: chatCompletionOptions = {}
+  ): Promise<CompletionResponse | undefined> => {
+    const body = JSON.stringify({
+      messages,
+      model,
+      ...options
+    });
+  
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.AI_API_KEY}`,
+      },
+      body,
+    });
+    const data = await res.json() as CompletionResponse | undefined;
+    return data;
+  };
+  
 export type { Model, CompletionResponse}

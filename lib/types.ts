@@ -17,6 +17,11 @@ const successResponseSchema = z.object({
   id: z.string(),
   codes: z.array(z.string()),
   url: z.string(),
+  tokens: z.object({
+    total: z.number(),
+    prompt: z.number(),
+    completion: z.number(),
+  }),
 });
 
 const failureResponseSchema = z.object({
@@ -46,7 +51,9 @@ const outputSchema = z.discriminatedUnion('status',[
   failureOutputSchema,
 ]);
 
-type Response = z.infer<typeof outputSchema>;
+type Response = z.infer<typeof responseSchema>;
+type SuccessResponse = z.infer<typeof successResponseSchema>;
+type FailureResponse = z.infer<typeof failureResponseSchema>;
 type Output = z.infer<typeof outputSchema>;
 
 const parseInput = (input: unknown) => {
@@ -57,6 +64,8 @@ export {
   type Input,
   type Output,
   type Response,
+  type SuccessResponse,
+  type FailureResponse,
   inputSchema,
   outputSchema,
   parseInput
