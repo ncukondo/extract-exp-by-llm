@@ -11,19 +11,27 @@ const handler = async (input: unknown): Promise<Output> => {
       message: `Invalid input structure : ${parseResult.error}`
     }
   }
-  const {key, data} = parseResult.data;
-  const responses = await Promise.all(data.map(async ({id,content}) => {
-    const res = await extractIds(baseUrl,content);
-    if(res.status === "success") {
-      const url = `${res.url}&data.id=${id}`;
-      return {id, ...res, url};
+  try{
+    const {key, data} = parseResult.data;
+    const responses = await Promise.all(data.map(async ({id,content}) => {
+      const res = await extractIds(baseUrl,content);
+      if(res.status === "success") {
+        const url = `${res.url}&data.id=${id}`;
+        return {id, ...res, url};
+      }
+      return {id,...res};
+    }));
+    return {
+      status: "success",
+      key,
+      data: responses
     }
-    return {id,...res};
-  }));
-  return {
-    status: "success",
-    key,
-    data: responses
+  }catch(e){
+    const message = e instanceof Error ? e.message : "An error occurred";
+    return {
+      status: "failure",
+      message: message
+    }
   }
 }
 
@@ -36,24 +44,32 @@ const dummyHandler = async (input: unknown): Promise<Output> => {
     }
   }
   const {key, data} = parseResult.data;
-  const responses = await Promise.all(data.map(async ({id,content}) => {
+  try{
+    const responses = await Promise.all(data.map(async ({id,content}) => {
+      return {
+        id,
+        status: "success" as const,
+        codes: ["dummy"],
+        url: `https://dummy.com?data.id=${id}`,
+        tokens: {
+          total: 0,
+          prompt: 0,
+          completion: 0,
+        }
+      };
+    }
+    ));
     return {
-      id,
-      status: "success" as const,
-      codes: ["dummy"],
-      url: `https://dummy.com?data.id=${id}`,
-      tokens: {
-        total: 0,
-        prompt: 0,
-        completion: 0,
-      }
-    };
-  }
-  ));
-  return {
-    status: "success",
-    key,
-    data: responses
+      status: "success",
+      key,
+      data: responses
+    }
+  }catch(e){
+    const message = e instanceof Error ? e.message : "An error occurred";
+    return {
+      status: "failure",
+      message: message
+    }
   }
 }
 

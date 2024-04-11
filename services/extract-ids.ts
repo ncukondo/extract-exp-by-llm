@@ -16,7 +16,7 @@ const extractIdsApi = async (content: string): Promise<CompletionResponse | unde
       content: text,
     },
   ] as const satisfies ReadonlyArray<Message>;
-  const res = await chatCompletion(messages,"gpt-4-turbo-preview",{temperature:0.1});
+  const res = await chatCompletion(messages,"gpt-4-turbo-preview",{temperature:0.0});
   return res;
 }
 
