@@ -38,8 +38,8 @@ const convertToFormattedIds = (ids: string[]): FormattedIds => {
   }
 }
 
-const convertToUrl = async (baseUrl:string,ids: string[]): Promise<string> => {
-  const formattedIds = await convertToFormattedIds(ids);
+const convertToUrl = (baseUrl:string,ids: string[]): string => {
+  const formattedIds = convertToFormattedIds(ids);
   const params = Object.entries(formattedIds).flatMap(([key, idList]) => {
     return idList.map((id,i) => [`data.${key}.${i}`,`${id}`]);
   })
