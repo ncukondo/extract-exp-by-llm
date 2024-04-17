@@ -17,6 +17,7 @@ const successResponseSchema = z.object({
   id: z.string(),
   codes: z.array(z.string()),
   url: z.string(),
+  text: z.string(),
   tokens: z.object({
     total: z.number(),
     prompt: z.number(),
