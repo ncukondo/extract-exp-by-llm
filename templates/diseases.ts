@@ -1,191 +1,193 @@
-export const diseases = `## 経験すべき疾患
+export const diseases = `## 疾患
 
-id,項目
-JlvnlXM,鉄欠乏性貧血
-JlvnlYM,ビタミンB12欠乏性貧血
-JlvnlZE,播種性血管内凝固<DIC>
-JlvnlcA,脳出血
-JlvnlcE,くも膜下出血
-JlvnlcQ,脳梗塞
-JlvnlcY,一過性脳虚血発作
-Jlvnlcw,脳炎・髄膜炎
-JlvnldE,多発性硬化症
-JlvnldM,Alzheimer型認知症
-Jlvnldc,Parkinson病
-JlvnleU,重症筋無力症
-Jlvnleo,全般てんかん
-Jlvnles,局在関連てんかん
-Jlvnle0,片頭痛
-Jlvnle8,緊張型頭痛
-JlvnlfU,急性硬膜外血腫
-JlvnlfY,硬膜下血腫（急性・慢性）
-JlvnlgE,湿疹反応（湿疹三角）
-JlvnlgM,接触皮膚炎
-JlvnlgQ,アトピー性皮膚炎
-Jlvnlg4,蕁麻疹
-Jlvnlh8,Stevens-Johnson症候群
-Jlvnljk,蜂窩織炎
-Jlvnlj8,疥癬
-Jlvnlk8,後天性免疫不全症候群<AIDS>に伴う皮膚症状（梅毒・難治性ヘルペス・伝染性軟属腫・Kaposi肉腫等）
-JlvnlkE,単純ヘルペス
-JlvnlkM,帯状疱疹
-Jlvnlkc,麻疹
-Jlvnlkk,風疹
-Jlvnlko,水痘
-JlvnlmI,褥瘡
-Jlvnlpc,脊髄損傷
-Jlvnlnk,骨折
-Jlvnlnw,骨粗鬆症
-Jlvnlpg,脊椎椎間板ヘルニア
-Jlvnlpo,脊柱管狭窄症
-Jlvnloc,変形性関節症
-Jlvnlr8,労作性狭心症
-JlvnlsE,冠攣縮性狭心症
-JlvnlsI,不安定狭心症
-JlvnlsQ,急性心筋梗塞
-Jlvnlsc,房室ブロック
-Jlvnlsg,心房細動
-Jlvnlso,心房粗動
-Jlvnlsw,発作性上室頻拍症
-Jlvnls0,心室頻拍
-JlvnltA,心室細動
-JlvnltI,期外収縮(上室性・心室性)
-Jlvnltg,僧帽弁疾患(狭窄・閉鎖不全)
-Jlvnlts,大動脈弁疾患（狭窄・閉鎖不全）
-JlvnluA,特発性心筋症（肥大型・拡張型・拘束型）
-JlvnluY,急性心筋炎
-Jlvnlug,感染性心内膜炎
-JlvnlvY,急性大動脈解離
-Jlvnlvc,大動脈瘤（胸部・腹部）
-Jlvnlvk,閉塞性動脈硬化症
-Jlvnlv0,深部静脈血栓症
-JlvnlwI,下肢静脈瘤
-Jlvnlwo,起立性低血圧
-JlvnlxA,急性上気道感染症（かぜ症候群）
-JlvnlxI,扁桃炎
-J-RA37E,気管支炎
-Jlvnlxc,肺炎（定型・非定型）
-Jlvnlxg,肺結核症
-JlvnlyE,慢性閉塞性肺疾患（COPD）
-JlvnlyQ,気管支喘息（咳喘息を含む）
-JlvnlzI,肺血栓塞栓症
-Jlvnl0I,睡眠時無呼吸症候群
-J-RA9r4,急性呼吸促(窮)迫症候群<ARDS>
-Jlvnl1A,気胸（自然・緊張性・外傷性）
-Jlvnl2E,食道・胃静脈瘤
-Jlvnl2M,胃食道逆流症<GERD>
-Jlvnl2k,消化性潰瘍（胃潰瘍・十二指腸潰瘍)
-Jlvnl3Q,機能性消化管障害（機能性ディスペプシア）
-Jlvnl3k,急性虫垂炎
-Jlvnl3o,腸閉塞
-Jlvnl30,痔核・痔瘻
-Jlvnl4o,便秘症
-Jlvnl34,機能性消化管障害（過敏性腸症候群）
-Jlvnl3s,潰瘍性大腸炎
-Jlvnl3w,Crohn病
-Jlvnl28,急性胃腸炎
-Jlvnl50,A型肝炎
-Jlvnl54,B型肝炎
-Jlvnl6A,C型肝炎
-Jlvnl6Q,急性肝炎
-Jlvnl6Y,慢性肝炎
-Jlvnl6g,急性肝不全
-Jlvnl7c,脂肪肝
-Jlvnl64,アルコール性肝障害
-Jlvnl6k,門脈圧亢進症
-Jlvnl6s,肝性脳症
-Jlvnl6w,肝癌
-Jlvnl5M,胆石症
-Jlvnl5U,胆嚢炎
-Jlvnl5Y,胆管炎
-Jlvnl7k,急性膵炎（アルコール性・胆石性・特発性）
-Jlvnl7o,慢性膵炎（アルコール性・特発性）
-Jlvnl70,腹膜炎
-Jlvnl8E,鼠径部ヘルニア
-Jlvnl8Q,急性腎障害<AKI>
-Jlvnl8U,慢性腎臓病<CKD>
-Jlvnl8g,高・低ナトリウム血症
-Jlvnl8o,高・低カリウム血症
-Jlvnl8s,高・低カルシウム血症
-Jlvnl9M,急性糸球体腎炎
-Jlvnl9U,IgA腎症
-Jlvnl9Y,膜性腎症
-Jlvnl9k,微小変化群
-Jlvnl-M,急性腎盂腎炎
-Jlvnl-Q,糖尿病腎障害
-Jlvnl_I,尿路結石
-Jlvnl_Q,膀胱炎
-Jlvnl_U,前立腺炎
-Jlvnl_c,尿道炎
-Jlvnl_0,前立腺肥大症
-JlvnmAo,機能性月経困難症
-JlvnmA0,更年期障害
-JlvnmBA,子宮筋腫・子宮腺筋症
-JlvnmBE,子宮内膜症
-JlvnmBk,異所性妊娠
-JlvnmBs,流産・切迫流産
-JlvnmB4,妊娠高血圧症候群
-JlvnmCM,切迫早産
-JlvnmCY,早産
-JlvnmEs,急性白血病
-JlvnmE4,熱性けいれん
-JlvnmFA,脳性麻痺
-JlvnmGY,細気管支炎
-JlvnmGw,腸重積症
-JlvnmG8,乳児下痢症
-JlvnmHI,鼠径ヘルニア
-JlvnmHU,ネフローゼ症候群
-JlvnmK8,甲状腺機能亢進症
-JlvnmLA,甲状腺機能低下症
-JlvnmL0,1型糖尿病
-JlvnmL8,2型糖尿病
-JlvnmMA,糖尿病ケトアシドーシス
-JlvnmMI,高血糖高浸透圧症候群
-JlvnmMU,糖尿病性網膜症
-JlvnmMY,糖尿病性腎症
-JlvnmMg,糖尿病性神経障害
-JlvnmMk,足病変
-JlvnmMw,脂質異常症
-JlvnmNE,高尿酸血症・痛風
-JlvnmNs,結膜炎・角膜炎
-JlvnmN4,白内障
-JlvnmN8,緑内障
-JlvnmOQ,糖尿病・高血圧による眼底変化（糖尿病網膜症など）
-JlvnmO0,中耳炎（急性・慢性・滲出性・真珠腫性）
-JlvnmPg,良性発作性頭位めまい症
-JlvnmPo,Ménière病
-JlvnmP0,鼻出血
-JlvnmP4,副鼻腔炎（急性・慢性）
-JlvnmQA,アレルギー性鼻炎
-JlvnmQU,咽頭炎
-JlvnmTI,頸部リンパ節転移等
-JlvnmT0,うつ病
-JlvnmT4,双極性障害（躁うつ病）
-JlvnmUA,統合失調症
-JlvnmUY,身体症状症（身体化障害・疼痛性障害・心気症）
-JlvnmTU,認知症
-JmxLo0Y,関節リウマチ
-JmxLo0g,全身性エリテマトーデス（SLE）及び合併症（中枢神経ループス、ループス腎炎、抗リン脂質抗体症候群）
-JlvnmWs,IgA血管炎
-JlvnmW0,川崎病
-JmxLo1A,後天性免疫不全症（AIDS）
-JlvnmXE,髄膜脳炎
-JlvnmXY,血流感染・感染性心内膜炎
-JlvnmXo,膀胱炎・腎盂腎炎
-JlvnmX4,血管内留置カテーテル関連感染
-JlvnmX8,尿路カテーテル感染
-JlvnmYI,手術部位感染
-JlvnmcI,肺癌
-Jlvnmcg,食道癌
-Jlvnmco,胃癌
-Jlvnmc0,大腸癌
-JlvnmdA,原発性肝癌
-JlvnmdQ,膵癌
-JlvnmdY,腎癌
-Jlvnmdg,腎盂尿管癌・膀胱癌
-Jlvnmdk,前立腺癌
-Jlvnmdw,子宮頸癌
-Jlvnmd4,子宮体癌（子宮内膜癌）
-JlvnmeA,卵巣腫瘍
-JlvnmeQ,原発性乳癌
+| id | 項目 |
+| - | - |
+| JlvnlXM | 鉄欠乏性貧血 |
+| JlvnlYM | ビタミンB12欠乏性貧血 |
+| JlvnlZE | 播種性血管内凝固<DIC> |
+| JlvnlcA | 脳出血 |
+| JlvnlcE | くも膜下出血 |
+| JlvnlcQ | 脳梗塞 |
+| JlvnlcY | 一過性脳虚血発作 |
+| Jlvnlcw | 脳炎・髄膜炎 |
+| JlvnldE | 多発性硬化症 |
+| JlvnldM | Alzheimer型認知症 |
+| Jlvnldc | Parkinson病 |
+| JlvnleU | 重症筋無力症 |
+| Jlvnleo | 全般てんかん |
+| Jlvnles | 局在関連てんかん |
+| Jlvnle0 | 片頭痛 |
+| Jlvnle8 | 緊張型頭痛 |
+| JlvnlfU | 急性硬膜外血腫 |
+| JlvnlfY | 硬膜下血腫（急性・慢性） |
+| JlvnlgE | 湿疹反応（湿疹三角） |
+| JlvnlgM | 接触皮膚炎 |
+| JlvnlgQ | アトピー性皮膚炎 |
+| Jlvnlg4 | 蕁麻疹 |
+| Jlvnlh8 | Stevens-Johnson症候群 |
+| Jlvnljk | 蜂窩織炎 |
+| Jlvnlj8 | 疥癬 |
+| Jlvnlk8 | 後天性免疫不全症候群<AIDS>に伴う皮膚症状（梅毒・難治性ヘルペス・伝染性軟属腫・Kaposi肉腫等） |
+| JlvnlkE | 単純ヘルペス |
+| JlvnlkM | 帯状疱疹 |
+| Jlvnlkc | 麻疹 |
+| Jlvnlkk | 風疹 |
+| Jlvnlko | 水痘 |
+| JlvnlmI | 褥瘡 |
+| Jlvnlpc | 脊髄損傷 |
+| Jlvnlnk | 骨折 |
+| Jlvnlnw | 骨粗鬆症 |
+| Jlvnlpg | 脊椎椎間板ヘルニア |
+| Jlvnlpo | 脊柱管狭窄症 |
+| Jlvnloc | 変形性関節症 |
+| Jlvnlr8 | 労作性狭心症 |
+| JlvnlsE | 冠攣縮性狭心症 |
+| JlvnlsI | 不安定狭心症 |
+| JlvnlsQ | 急性心筋梗塞 |
+| Jlvnlsc | 房室ブロック |
+| Jlvnlsg | 心房細動 |
+| Jlvnlso | 心房粗動 |
+| Jlvnlsw | 発作性上室頻拍症 |
+| Jlvnls0 | 心室頻拍 |
+| JlvnltA | 心室細動 |
+| JlvnltI | 期外収縮(上室性・心室性) |
+| Jlvnltg | 僧帽弁疾患(狭窄・閉鎖不全) |
+| Jlvnlts | 大動脈弁疾患（狭窄・閉鎖不全） |
+| JlvnluA | 特発性心筋症（肥大型・拡張型・拘束型） |
+| JlvnluY | 急性心筋炎 |
+| Jlvnlug | 感染性心内膜炎 |
+| JlvnlvY | 急性大動脈解離 |
+| Jlvnlvc | 大動脈瘤（胸部・腹部） |
+| Jlvnlvk | 閉塞性動脈硬化症 |
+| Jlvnlv0 | 深部静脈血栓症 |
+| JlvnlwI | 下肢静脈瘤 |
+| Jlvnlwo | 起立性低血圧 |
+| JlvnlxA | 急性上気道感染症（かぜ症候群） |
+| JlvnlxI | 扁桃炎 |
+| J-RA37E | 気管支炎 |
+| Jlvnlxc | 肺炎（定型・非定型） |
+| Jlvnlxg | 肺結核症 |
+| JlvnlyE | 慢性閉塞性肺疾患（COPD） |
+| JlvnlyQ | 気管支喘息（咳喘息を含む） |
+| JlvnlzI | 肺血栓塞栓症 |
+| Jlvnl0I | 睡眠時無呼吸症候群 |
+| J-RA9r4 | 急性呼吸促(窮)迫症候群<ARDS> |
+| Jlvnl1A | 気胸（自然・緊張性・外傷性） |
+| Jlvnl2E | 食道・胃静脈瘤 |
+| Jlvnl2M | 胃食道逆流症<GERD> |
+| Jlvnl2k | 消化性潰瘍（胃潰瘍・十二指腸潰瘍) |
+| Jlvnl3Q | 機能性消化管障害（機能性ディスペプシア） |
+| Jlvnl3k | 急性虫垂炎 |
+| Jlvnl3o | 腸閉塞 |
+| Jlvnl30 | 痔核・痔瘻 |
+| Jlvnl4o | 便秘症 |
+| Jlvnl34 | 機能性消化管障害（過敏性腸症候群） |
+| Jlvnl3s | 潰瘍性大腸炎 |
+| Jlvnl3w | Crohn病 |
+| Jlvnl28 | 急性胃腸炎 |
+| Jlvnl50 | A型肝炎 |
+| Jlvnl54 | B型肝炎 |
+| Jlvnl6A | C型肝炎 |
+| Jlvnl6Q | 急性肝炎 |
+| Jlvnl6Y | 慢性肝炎 |
+| Jlvnl6g | 急性肝不全 |
+| Jlvnl7c | 脂肪肝 |
+| Jlvnl64 | アルコール性肝障害 |
+| Jlvnl6k | 門脈圧亢進症 |
+| Jlvnl6s | 肝性脳症 |
+| Jlvnl6w | 肝癌 |
+| Jlvnl5M | 胆石症 |
+| Jlvnl5U | 胆嚢炎 |
+| Jlvnl5Y | 胆管炎 |
+| Jlvnl7k | 急性膵炎（アルコール性・胆石性・特発性） |
+| Jlvnl7o | 慢性膵炎（アルコール性・特発性） |
+| Jlvnl70 | 腹膜炎 |
+| Jlvnl8E | 鼠径部ヘルニア |
+| Jlvnl8Q | 急性腎障害<AKI> |
+| Jlvnl8U | 慢性腎臓病<CKD> |
+| Jlvnl8g | 高・低ナトリウム血症 |
+| Jlvnl8o | 高・低カリウム血症 |
+| Jlvnl8s | 高・低カルシウム血症 |
+| Jlvnl9M | 急性糸球体腎炎 |
+| Jlvnl9U | IgA腎症 |
+| Jlvnl9Y | 膜性腎症 |
+| Jlvnl9k | 微小変化群 |
+| Jlvnl-M | 急性腎盂腎炎 |
+| Jlvnl-Q | 糖尿病腎障害 |
+| Jlvnl_I | 尿路結石 |
+| Jlvnl_Q | 膀胱炎 |
+| Jlvnl_U | 前立腺炎 |
+| Jlvnl_c | 尿道炎 |
+| Jlvnl_0 | 前立腺肥大症 |
+| JlvnmAo | 機能性月経困難症 |
+| JlvnmA0 | 更年期障害 |
+| JlvnmBA | 子宮筋腫・子宮腺筋症 |
+| JlvnmBE | 子宮内膜症 |
+| JlvnmBk | 異所性妊娠 |
+| JlvnmBs | 流産・切迫流産 |
+| JlvnmB4 | 妊娠高血圧症候群 |
+| JlvnmCM | 切迫早産 |
+| JlvnmCY | 早産 |
+| JlvnmEs | 急性白血病 |
+| JlvnmE4 | 熱性けいれん |
+| JlvnmFA | 脳性麻痺 |
+| JlvnmGY | 細気管支炎 |
+| JlvnmGw | 腸重積症 |
+| JlvnmG8 | 乳児下痢症 |
+| JlvnmHI | 鼠径ヘルニア |
+| JlvnmHU | ネフローゼ症候群 |
+| JlvnmK8 | 甲状腺機能亢進症 |
+| JlvnmLA | 甲状腺機能低下症 |
+| JlvnmL0 | 1型糖尿病 |
+| JlvnmL8 | 2型糖尿病 |
+| JlvnmMA | 糖尿病ケトアシドーシス |
+| JlvnmMI | 高血糖高浸透圧症候群 |
+| JlvnmMU | 糖尿病性網膜症 |
+| JlvnmMY | 糖尿病性腎症 |
+| JlvnmMg | 糖尿病性神経障害 |
+| JlvnmMk | 足病変 |
+| JlvnmMw | 脂質異常症 |
+| JlvnmNE | 高尿酸血症・痛風 |
+| JlvnmNs | 結膜炎・角膜炎 |
+| JlvnmN4 | 白内障 |
+| JlvnmN8 | 緑内障 |
+| JlvnmOQ | 糖尿病・高血圧による眼底変化（糖尿病網膜症など） |
+| JlvnmO0 | 中耳炎（急性・慢性・滲出性・真珠腫性） |
+| JlvnmPg | 良性発作性頭位めまい症 |
+| JlvnmPo | Ménière病 |
+| JlvnmP0 | 鼻出血 |
+| JlvnmP4 | 副鼻腔炎（急性・慢性） |
+| JlvnmQA | アレルギー性鼻炎 |
+| JlvnmQU | 咽頭炎 |
+| JlvnmTI | 頸部リンパ節転移等 |
+| JlvnmT0 | うつ病 |
+| JlvnmT4 | 双極性障害（躁うつ病） |
+| JlvnmUA | 統合失調症 |
+| JlvnmUY | 身体症状症（身体化障害・疼痛性障害・心気症） |
+| JlvnmTU | 認知症 |
+| JmxLo0Y | 関節リウマチ |
+| JmxLo0g | 全身性エリテマトーデス（SLE）及び合併症（中枢神経ループス、ループス腎炎、抗リン脂質抗体症候群） |
+| JlvnmWs | IgA血管炎 |
+| JlvnmW0 | 川崎病 |
+| JmxLo1A | 後天性免疫不全症（AIDS） |
+| JlvnmXE | 髄膜脳炎 |
+| JlvnmXY | 血流感染・感染性心内膜炎 |
+| JlvnmXo | 膀胱炎・腎盂腎炎 |
+| JlvnmX4 | 血管内留置カテーテル関連感染 |
+| JlvnmX8 | 尿路カテーテル感染 |
+| JlvnmYI | 手術部位感染 |
+| JlvnmcI | 肺癌 |
+| Jlvnmcg | 食道癌 |
+| Jlvnmco | 胃癌 |
+| Jlvnmc0 | 大腸癌 |
+| JlvnmdA | 原発性肝癌 |
+| JlvnmdQ | 膵癌 |
+| JlvnmdY | 腎癌 |
+| Jlvnmdg | 腎盂尿管癌・膀胱癌 |
+| Jlvnmdk | 前立腺癌 |
+| Jlvnmdw | 子宮頸癌 |
+| Jlvnmd4 | 子宮体癌（子宮内膜癌） |
+| JlvnmeA | 卵巣腫瘍 |
+| JlvnmeQ | 原発性乳癌 |
+
 `

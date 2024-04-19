@@ -2,6 +2,7 @@ import { chatCompletion, type CompletionResponse, type Message } from "../lib/ch
 import { promptTemplate } from "../templates/extract_id.js";
 import { idsTemplate } from "../templates/ids.js";
 import type { FailureResponse, SuccessResponse } from "../lib/types.js";
+import { idsLabelTemplate } from "../templates/id_template.js";
 
 const makeExtractIdPrompt = (content: string) => {
   const prompt = promptTemplate;
@@ -16,7 +17,7 @@ const extractIdsApi = async (content: string): Promise<CompletionResponse | unde
       content: text,
     },
   ] as const satisfies ReadonlyArray<Message>;
-  const res = await chatCompletion(messages,"gpt-4-turbo-preview",{temperature:0.1});
+  const res = await chatCompletion(messages,"gpt-4-turbo-preview",{temperature:0.2});
   return res;
 }
 
@@ -36,6 +37,14 @@ const convertToFormattedIds = (ids: string[]): FormattedIds => {
     symptoms: formatTemplate.symptoms.filter((id) => ids.includes(id)),
     examinations: formatTemplate.examinations.filter((id) => ids.includes(id)),
   }
+}
+
+const convertToText = (ids: string[]): string => {
+  const formattedIds = convertToFormattedIds(ids);
+  const text = Object.entries(formattedIds).map(([key, idList]) => {
+    return `## ${key}\n\n${idList.map((id) => `| ${id} | ${idsLabelTemplate.find((label) => label.id === id)?.item} |`).join("\n")}`
+  }).join("\n\n");
+  return text;
 }
 
 const convertToUrl = (baseUrl:string,ids: string[]): string => {
@@ -70,4 +79,4 @@ const extractIds = async (baseUrl:string, content: string): Promise<ExtractIdsRe
   }
 }
 
-export {extractIds,convertToUrl,convertToFormattedIds}
+export {extractIds,convertToUrl,convertToFormattedIds,convertToText}

@@ -61,6 +61,10 @@ const parseInput = (input: unknown) => {
   return inputSchema.safeParse(input);
 }
 
+const parseOutput = (output: unknown) => {
+  return outputSchema.safeParse(output);
+}
+
 export {
   type Input,
   type Output,
@@ -69,5 +73,6 @@ export {
   type FailureResponse,
   inputSchema,
   outputSchema,
-  parseInput
+  parseInput,
+  parseOutput
 }

@@ -9,6 +9,7 @@ OUTPUT_DIR="./test/log"
 STD_LOG="$OUTPUT_DIR/$TIMESTAMP.log"
 ERROR_LOG="$OUTPUT_DIR/$TIMESTAMP_error.log"
 JSON_LOG="$OUTPUT_DIR/$TIMESTAMP.json"
+TEXT_LOG="$OUTPUT_DIR/$TIMESTAMP.txt"
 TEMP_FILE="$OUTPUT_DIR/temp.json"
 
 echo $JSON_LOG
@@ -26,5 +27,7 @@ curl -o $TEMP_FILE -X POST -H "Content-Type: application/json" -d @$FILE_PATH $A
 
 # jqを使用して出力ファイルを整形する
 jq '.' $TEMP_FILE > $JSON_LOG
+
+cat $JSON_LOG | bun run ./test/tools/output_converter.ts > $TEXT_LOG
 
 rm $TEMP_FILE
