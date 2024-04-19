@@ -1,1 +1,1 @@
-https://extract-exp-by-llm.vercel.app
+./sample/
