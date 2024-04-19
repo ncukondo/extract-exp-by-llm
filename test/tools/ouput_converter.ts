@@ -1,4 +1,4 @@
-import { convertToUrl } from "../services/extract-ids"
+import { convertToUrl } from "../../services/extract-ids"
 
 
 const input = `JlvnmcI`
