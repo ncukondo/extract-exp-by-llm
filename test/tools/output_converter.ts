@@ -24,18 +24,19 @@ if(data.status === "failure") {
 
 console.log(data.status);
 for(const item of data.data) {
-  console.log(`\n\n\n${item.id}`);
+  console.log(`\n\n\n## ${item.id}\n\n`);
   if(item.status === "failure") {
     console.log(item.message);
     continue;
   }
   const idList = item.codes;
 
-  console.log(convertToUrl(baseUrl,idList));
-  
   const text = convertToText(idList);
   
   console.log(text);
+
+  console.log(`\n\n[Form Link](${convertToUrl(baseUrl,idList)})`);
+  
 }
 
 

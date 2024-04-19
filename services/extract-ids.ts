@@ -41,8 +41,10 @@ const convertToFormattedIds = (ids: string[]): FormattedIds => {
 
 const convertToText = (ids: string[]): string => {
   const formattedIds = convertToFormattedIds(ids);
+  const header = "| ID | Item |\n| --- | --- |\n";
   const text = Object.entries(formattedIds).map(([key, idList]) => {
-    return `## ${key}\n\n${idList.map((id) => `| ${id} | ${idsLabelTemplate.find((label) => label.id === id)?.item} |`).join("\n")}`
+    const table = idList.length === 0 ? "" : `${header}${idList.map((id) => `| ${id} | ${idsLabelTemplate.find((label) => label.id === id)?.item} |`).join("\n")}`; 
+    return `### ${key}\n\n${table}`
   }).join("\n\n");
   return text;
 }

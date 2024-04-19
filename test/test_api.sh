@@ -9,10 +9,11 @@ OUTPUT_DIR="./test/log"
 STD_LOG="$OUTPUT_DIR/$TIMESTAMP.log"
 ERROR_LOG="$OUTPUT_DIR/$TIMESTAMP_error.log"
 JSON_LOG="$OUTPUT_DIR/$TIMESTAMP.json"
-TEXT_LOG="$OUTPUT_DIR/$TIMESTAMP.txt"
+TEXT_LOG="$OUTPUT_DIR/$TIMESTAMP.md"
 TEMP_FILE="$OUTPUT_DIR/temp.json"
 
 echo $JSON_LOG
+echo $TEXT_LOG
 
 # end point lodal: http://localhost:3000/api
 # dummy end point local: http://localhost:3000/api/dummy
