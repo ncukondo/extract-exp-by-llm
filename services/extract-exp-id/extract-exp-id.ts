@@ -1,8 +1,7 @@
-import { chatCompletion, type CompletionResponse, type Message } from "../lib/chat-completion.js";
-import { promptTemplate } from "../templates/extract_id.js";
-import { idsTemplate } from "../templates/ids.js";
-import type { FailureResponse, SuccessResponse } from "../lib/types.js";
-import { idsLabelTemplate } from "../templates/id_template.js";
+import { chatCompletion, type CompletionResponse, type Message } from "../../lib/chat-completion.js";
+import { promptTemplate } from "./prompt-template.js";
+import type { FailureResponse, SuccessResponse } from "../../lib/types.js";
+import { idTemplate } from "./id-template.js";
 
 const makeExtractIdPrompt = (content: string) => {
   const prompt = promptTemplate;
@@ -30,20 +29,26 @@ type FormattedIds ={
 
 
 const convertToFormattedIds = (ids: string[]): FormattedIds => {
-  const formatTemplate = idsTemplate;
+  const formatTemplate = idTemplate;
+  const procedures = idTemplate.procedures.map((item) => item.id);
+  const diseases = idTemplate.diseases.map((item) => item.id);
+  const symptoms = idTemplate.symptoms.map((item) => item.id);
+  const examinations = idTemplate.examinations.map((item) => item.id);
+
   return {
-    procedures: formatTemplate.procedures.filter((id) => ids.includes(id)),
-    diseases: formatTemplate.diseases.filter((id) => ids.includes(id)),
-    symptoms: formatTemplate.symptoms.filter((id) => ids.includes(id)),
-    examinations: formatTemplate.examinations.filter((id) => ids.includes(id)),
+    procedures: ids.filter((id) => procedures.includes(id)),
+    diseases: ids.filter((id) => diseases.includes(id)),
+    symptoms: ids.filter((id) => symptoms.includes(id)),
+    examinations: ids.filter((id) => examinations.includes(id)),
   }
 }
 
 const convertToText = (ids: string[]): string => {
   const formattedIds = convertToFormattedIds(ids);
+  const labelTemplate = [...idTemplate.procedures,...idTemplate.diseases,...idTemplate.symptoms,...idTemplate.examinations];
   const header = "| ID | Item |\n| --- | --- |\n";
   const text = Object.entries(formattedIds).map(([key, idList]) => {
-    const table = idList.length === 0 ? "" : `${header}${idList.map((id) => `| ${id} | ${idsLabelTemplate.find((label) => label.id === id)?.item} |`).join("\n")}`; 
+    const table = idList.length === 0 ? "" : `${header}${idList.map((id) => `| ${id} | ${labelTemplate.find((label) => label.id === id)?.item} |`).join("\n")}`; 
     return `### ${key}\n\n${table}`
   }).join("\n\n");
   return text;

@@ -1,4 +1,5 @@
-export const idsLabelTemplate = [
+export const idTemplate = {
+  diseases: [
     {id:"JlvnlXM", item:"鉄欠乏性貧血"},
     {id:"JlvnlYM", item:"ビタミンB12欠乏性貧血"},
     {id:"JlvnlZE", item:"播種性血管内凝固<DIC>"},
@@ -186,7 +187,8 @@ export const idsLabelTemplate = [
     {id:"Jlvnmd4", item:"子宮体癌（子宮内膜癌）"},
     {id:"JlvnmeA", item:"卵巣腫瘍"},
     {id:"JlvnmeQ", item:"原発性乳癌"},
-
+  ],
+  symptoms:[
     {id:"JlAK6lk",item:"発熱"},
     {id:"JlAK6lo",item:"全身倦怠感"},
     {id:"JlAK6ls",item:"食思(欲)不振"},
@@ -224,7 +226,8 @@ export const idsLabelTemplate = [
     {id:"JlAK6ns",item:"感覚障害"},
     {id:"JlAK6nw",item:"腰背部痛"},
     {id:"JlAK6n0",item:"関節痛・関節腫脹"},
-
+  ],
+  examinations:[
     {id:"JkxirwY",item:"血算"},
     {id:"Jli6WW4",item:"生化学検査"},
     {id:"Jli6WW8",item:"凝固・線溶検査"},
@@ -250,7 +253,8 @@ export const idsLabelTemplate = [
     {id:"Jli6aBU",item:"MRI検査"},
     {id:"Jkxirxk",item:"核医学検査"},
     {id:"Jkxirw8",item:"内視鏡検査"},
-
+  ],
+  procedures:[
     {id:"JlAKx_k",item:"体位交換、移送"},
     {id:"Jub5cSY",item:"皮膚消毒"},
     {id:"Jub5cSc",item:"外用薬の貼付・塗布"},
@@ -275,3 +279,4 @@ export const idsLabelTemplate = [
     {id:"JlAKyA8",item:"手術室におけるガウンテクニック"},
     {id:"JlAKyBA",item:"基本的な縫合と抜糸 "},
   ]
+}

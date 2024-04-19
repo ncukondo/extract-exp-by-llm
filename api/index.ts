@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { handler } from "../services/make-response.js";
+import { handler } from "../services/extract-exp-id/post-handler.js";
 
 export default async function (req: VercelRequest, res: VercelResponse) {
   if (req.method === 'POST') {

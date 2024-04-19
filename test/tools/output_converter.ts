@@ -1,4 +1,4 @@
-import { convertToUrl,convertToText } from "../../services/extract-ids"
+import { convertToUrl,convertToText } from "../../services/extract-exp-id/extract-exp-id"
 import { parseOutput } from "../../lib/types";
 
 const baseUrl = "https://flexible-form.vercel.app/v/pEtOtu6xRWOEpjY3V5Iy9Q";
